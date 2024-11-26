@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 
 # Create your views here.
 def home (request):
@@ -99,6 +100,24 @@ def loginuser (request):
         
 
     return render(request, 'login.html')
+
+def register(request):
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        confirm_password = request.POST.get('confirm_password')
+
+        if password == confirm_password:
+            if User.objects.filter(username = username).exists():
+                messages.error(request, 'Username already exists')
+            
+            else:
+                user = User.objects.create_user(username = username, password = password)
+                user.save()
+                return redirect('login')
+
+    return render(request, 'register.html')
 
 def logout_user (request):
 

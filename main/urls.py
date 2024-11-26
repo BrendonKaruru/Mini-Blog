@@ -14,6 +14,7 @@ urlpatterns = [
     path('bloginfo/<int:pk>', views.bloginfo, name='bloginfo' ),
     path('deleteblog/<int:pk>', views.deleteblog, name='deleteblog' ),
     path('loginuser', views.loginuser, name='login'),
+    path('register', views.register, name='register'),
     path('logout', views.logout_user, name='logout' )
     
     
