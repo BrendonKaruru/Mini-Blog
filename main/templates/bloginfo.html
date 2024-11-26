@@ -1,0 +1,14 @@
+{% include 'navbar.html' %} 
+{% block content %}
+
+<div class="card" style="width: 18rem;">
+    <img src="{{blog.imageURL}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{blog.title}}</h5>
+      <p class="card-text">{{blog.body}}</p>
+      <a href="{% url "update_blog" blog.id %}" class="btn btn-primary">Update</a> <span><a href="{% url 'deleteblog' blog.id %}" class="btn btn-primary bg-danger">Delete<a/><span/>
+    </div>
+  </div>
+
+  {% endblock %} 
+  {% include 'footer.html' %}

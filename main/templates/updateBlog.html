@@ -1,0 +1,30 @@
+{% include 'navbar.html' %}
+<div class="container p-4">
+    <h2>Update Blog</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="form-outline mb-4 p-3" data-mdb-input-init>
+                <label class="form-label" for="form3Example3">Title</label>
+              <input type="text" name="title" value="{{blog.title}}" id="form3Example3" class="form-control" />
+              
+            </div>
+          
+            <!-- Password input -->
+            <div class="form-outline mb-4" data-mdb-input-init>
+                <label class="form-label" for="form3Example4">Body</label>
+              <textarea type="text" name="body" id="form3Example4" class="form-control"></textarea>
+              
+            </div>
+
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example">Cover Image:</label>
+                <input type="file" id="cover" name="cover" id="form3Example" class="form-control">
+            </div>
+        </div>
+      
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4" data-mdb-ripple-init>Update</button>
+      </form>
+</div>

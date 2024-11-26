@@ -1,0 +1,25 @@
+{% load static%}
+
+{% include 'navbar.html' %}
+
+{% block content %}
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/blog1.jpeg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/blog2.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/blog3.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+{% include 'footer.html' %}
+
